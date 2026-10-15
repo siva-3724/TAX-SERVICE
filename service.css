@@ -9,7 +9,6 @@
   --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   --sticky-top: 100px;
 }
-
 /* Reset */
 .services,
 .services * {
@@ -47,7 +46,6 @@
   line-height: 1.1;
   color: var(--text-dark);
 }
-
 .services .section-head p {
   max-width: 1250px;
   margin: 0 20px;
@@ -65,9 +63,7 @@
   gap: 35px;
   margin: 4vw;
   padding-bottom: 20px;
-
 }
-
 /* Every card sticks to the top while scrolling */
 .services .stack-card {
   --card-index: 0;
@@ -277,13 +273,11 @@
     }
   }
 }
-
 /* ========================================= TABLET RESPONSIVE ========================================= */
 @media (max-width: 900px) {
   :root {
     --sticky-top: 75px;
   }
-
   .services {
     padding: 85px 16px 90px;
   }
@@ -292,43 +286,35 @@
     grid-template-columns: 0.85fr 1.15fr;
     min-height: 390px;
   }
-
   .services .card-image,
   .services .card-image img {
     min-height: 390px;
   }
-
   .services .service-card {
     padding: 28px 24px;
   }
 }
-
 /* ========================================= MOBILE RESPONSIVE ========================================= */
 @media (max-width: 640px) {
   :root {
     --sticky-top: 14px;
   }
-
   .services {
     padding: 65px 12px 75px;
   }
-
   .services .stack-card {
     top: calc(var(--sticky-top) + var(--card-index) * 7px);
     grid-template-columns: 1fr;
     min-height: auto;
   }
-
   .services .card-image {
     height: 210px;
     min-height: 210px;
   }
-
   .services .card-image img {
     height: 100%;
     min-height: 210px;
   }
-
   .services .service-card {
     padding: 25px 20px 27px;
   }
