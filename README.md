@@ -133,15 +133,11 @@ You need:
 
 Replace `YOUR-USERNAME` with your GitHub username and `YOUR-REPOSITORY` with your actual repository name.
 
-```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-```
+https://github.com/siva-3724/TAX-SERVICE.git
 
 ### 2. Open the Project
 
-```bash
-cd YOUR-REPOSITORY
-```
+`
 
 Open the project folder in Visual Studio Code.
 
@@ -167,7 +163,7 @@ Check the browser's developer console for missing files or JavaScript errors.
 
 Edit the page title and metadata in `index.html`.
 
-```html
+
 <title>FUTURE TAX</title>
 <meta
   name="description"
