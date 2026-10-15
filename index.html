@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>FUTURE TAX</title>
+        <link rel="icon" type="image/jpeg" href="images/icon.jpeg" style="width: auto; height: auto;">
+    </head>
+    <meta name="description" content="Remarkable business, mindset, life and relationship coaching.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="service.css">
+</head>
+
+<body>
+    <!----loading screen-->
+    <div class="loader-container" id="loader">
+        <div class="spinner">
+        </div>
+        <h2>
+            Loading...
+        </h2>
+        <p>
+            Please wait while we prepare everything.
+        </p>
+    </div>
+     <style>
+        /* Loading Screen */
+        .loader-container {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 65px;
+            height: 65px;
+            border: 5px solid #e5e7eb;
+            border-top: 5px solid #2563eb;
+            border-right: 5px solid #06b6d4;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.12);
+        }
+
+        /* Loading Text */
+        .loader-container h2 {
+            margin-top: 22px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .loader-container p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* Rotation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(280deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide Loader */
+        .loader-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Website Content */
+        .website-content {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .website-content h1 {
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .spinner {
+                animation-duration: 3s;
+            }
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+
+            loader.classList.add("hidden");
+
+            // Remove loader after fade-out animation
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+    <!---header and navigation--->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <!-- LEFT SIDE LOGO -->
+            <a href="#home" class="brand" aria-label="Remarkable Home">
+                <img src="images/logo.png" alt="Remarkable Logo">
+            </a>
+            <!-- RIGHT SIDE NAVIGATION -->
+            <div class="nav-links" id="navLinks">
+                <a href="#home">
+                    HOME
+                </a>
+                 </a>
+                <a href="#services">
+                    OUR SERVICES
+                </a>
+                <a href="#about">
+                    ABOUT
+                <a href="#contact">
+                    CONTACT
+                </a>
+                </button>
+            </div>
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <span id="menuIcon">
+                    &#9776;
+                </span>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <!-- HERO TWO-COLUMN LAYOUT -->
+                <div class="hero-grid">
+                    <!-- LEFT SIDE: CONTENT -->
+                    <div class="hero-content">
+                        <div class="eyebrow">
+                            Your business. Our expertise.
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="title-line" style="font-size: 40px; letter-spacing: normal; color: #14243a;">
+                            </span>
+                            <span class="title-highlight typing-text">
+                                <span id="typing-text">
+                                    Legal Compliance
+                                </span>
+                                <span class="typing-cursor" aria-hidden="true">
+                                </span>
+                            </span>
+                            <span class="title-line reveal-text">
+                                All Under One Roof.
+                            </span>
+                        </h1>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const typingElement = document.getElementById("typing-text");
+
+                                if (!typingElement) return;
+
+                                const phrases = [
+                                    "1.GST Services",
+                                    "2.TallyPrime & Accounting Services",
+                                    " 3.Income Tax & TDS Support",
+                                    " 4.Business Registration & MSME Support",
+                                    "5.Legal & Documentation Services",
+                                    "6. Agreements & Contracts",
+                                    "7.HR & Labour Compliance Support"
+
+                                ];
+                                let phraseIndex = 0;
+                                let characterIndex = phrases[0].length;
+                                let deleting = true;
+
+                                function typeEffect() {
+                                    const currentPhrase = phrases[phraseIndex];
+
+                                    if (deleting) {
+                                        characterIndex--;
+                                    } else {
+                                        characterIndex++;
+                                    }
+
+                                    typingElement.textContent =
+                                        currentPhrase.substring(0, characterIndex);
+
+                                    let delay = deleting ? 45 : 85;
+
+                                    if (!deleting && characterIndex === currentPhrase.length) {
+                                        delay = 1800;
+                                        deleting = true;
+                                    } else if (deleting && characterIndex === 0) {
+                                        deleting = false;
+                                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                                        delay = 350;
+                                    }
+
+                                    setTimeout(typeEffect, delay);
+                                }
+
+                                // Keep the first phrase visible briefly before erasing.
+                                setTimeout(typeEffect, 1800);
+                            });
+                        </script>
+                        <p class="hero-copy">
+                            Your trusted partner for accounting, GST, taxation,
+                            business registrations, legal documentation and HR
+                            compliance. Spend less time on paperwork and more
+                            time growing your business.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn-gradient" href="#contact">
+                                Book a Consultation
+                                <span>
+                                    ↗
+                                </span>
+                            </a>
+                            <a class="btn-gradient" href="#services">
+                                Explore Our Services ↓
+                            </a>
+                        </div>
+                    </div>
+                    <style>
+                        .btn-gradient {
+                            padding: 0.75rem 1.75rem;
+                            border-radius: 12px;
+                            border: none;
+                            font-weight: 600;
+                            color: #ffffff;
+                            background: linear-gradient(120deg, #6366f1, #22d3ee, #6366f1);
+                            background-size: 200% 200%;
+                            cursor: pointer;
+                            transition: background-position 400ms ease, transform 200ms ease;
+                        }
+
+                        .btn-gradient:hover {
+                            background-position: 100% 50%;
+                            transform: translateY(-1px);
+                        }
+
+                        .btn-gradient:focus-visible {
+                            outline: 3px solid rgba(255, 255, 255, 0.6);
+                            outline-offset: 3px;
+                        }
+                    </style>
+                    <!-- RIGHT SIDE: ANIMATED IMAGE -->
+                    <div class="hero-visual">
+                        <div class="hero-image-wrappr">
+                            <img src="images/c416a748-4700-4189-a5bd-82bf1433a9c4.jpeg"
+                                alt="Future Tax Solution - Accounting, Tax and Business Compliance" class="hero-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SERVICES / BENEFITS -->
+            <section class="benefits" aria-label="Our services">
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        ▤
+                    </span>
+                    <div>
+                        <b>
+                            Accounting & TallyPrime
+                        </b>
+                        <small>
+                            Books, reconciliation and reports
+                        </small>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        ₹
+                    </span>
+                    <div>
+                        <b>
+                            GST, Income Tax & TDS
+                        </b>
+                        <small>
+                            Returns, tax support and notices
+                        </small>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        ⌂
+                    </span>
+                    <div>
+                        <b>
+                            Business & Legal Support
+                        </b>
+                        <small>
+                            Registrations, contracts and records
+                        </small>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        ◎
+                    </span>
+                    <div>
+                        <b>
+                            HR & Labour Compliance
+                        </b>
+                        <small>
+                            Payroll, PF, ESI and documentation
+                        </small>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </section>
+        <div class="trust-strip">
+            <div class="container trust-grid">
+                <div class="trust-item">
+                    <b>
+                        ✓
+                    </b>
+                    Clear, practical guidance
+                </div>
+                <div class="trust-item">
+                    <b>
+                        ◷
+                    </b>
+                    Deadline-conscious support
+                </div>
+                <div class="trust-item">
+                    <b>
+                        ⌑
+                    </b>
+                    Confidential handling
+                </div>
+                <div class="trust-item">
+                    <b>
+                        ↗
+                    </b>
+                    Solutions for growing teams
+                </div>
+            </div>
+        </div>
+        <!----service section-->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">
+                        What We Do
+                    </div>
+                    <h2>
+                        Business support, made simpler.
+                    </h2>
+                    <p>
+                        From day-to-day accounts to statutory filings and essential documentation, get the professional
+                        support your business needs in one place.
+                    </p>
+                </div>
+            </div>
+            <div class="stack-wrapper">
+                <!-- CARD 01 -->
+                <article class="stack-card dark-card">
+                    <div class="card-image">
+                        <img src="images/1. GST Services.jpeg" alt="Traditional textile craftsmanship">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ▤
+                        </div>
+                        <h3>
+                            GST Services
+                        </h3>
+                        <p>
+                            Goods and Services Tax compliance demands accuracy and strict adherence to deadlines. We
+                            manage your entire GST lifecycle so you avoid penalties, notices, and lost input tax credit.
+                        </p>
+                        <ul>
+                            <li>
+                                New GST registration and amendments
+                            </li>
+                            <li>
+                                Monthly, quarterly, and annual return filing (GSTR-1, GSTR-3B, GSTR-9 and others)
+                            </li>
+                            <li>
+                                Input Tax Credit (ITC) reconciliation with GSTR-2B
+                            </li>
+                            <li>
+                                GST cancellation and revocation
+                            </li>
+                            <li>
+                                Advisory on GST rates, HSN/SAC codes, and applicability
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="GST Services">
+                            Discuss GST support
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!-- CARD 02 -->
+                <article class="stack-card dark-card">
+                    <div class="card-image">
+                        <img src="images/2. TallyPrime & Accounting Services.jpeg" alt="Textile weaving">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ▦
+                        </div>
+                        <h3>
+                            TallyPrime & Accounting
+                        </h3>
+                        <p>
+                            Reliable books of accounts are the foundation of every successful business. We maintain
+                            accurate, up-to-date records using TallyPrime so you always know where your business stands.
+                        </p>
+                        <ul>
+                            <li>
+                                TallyPrime setup and user support
+                            </li>
+                            <li>
+                                Bookkeeping and voucher entries
+                            </li>
+                            <li>
+                                Preparation of Profit & Loss account, Balance Sheet, and MIS reports
+                            </li>
+                            <li>
+                                Bank, debtor and creditor reconciliation
+                            </li>
+                            <li>
+                                Profit & Loss, Balance Sheet and MIS reports
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="TallyPrime & Accounting">
+                            Improve
+                            your accounts
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!-- CARD 03 -->
+                <article class="stack-card dark-card">
+                    <div class="card-image">
+                        <img src="images/3. Income Tax & TDS Support.jpeg" alt="Textile fabric collection">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ₹
+                        </div>
+                        <h3>
+                            Income Tax & TDS
+                        </h3>
+                        <p>
+                            From individuals to companies, we make tax filing simple, accurate, and timely, while
+                            helping
+                            you legally minimise your tax burden.
+                        </p>
+                        <ul>
+                            <li>
+                                Income tax return preparation and filing
+                            </li>
+                            <li>
+                                Tax computation and advance tax support
+                            </li>
+                            <li>
+                                TAN and TDS/TCS return assistance
+                            </li>
+                            <li>
+                                TDS calculation, deduction guidance, and challan payment support
+                            </li>
+                            <li>
+                                Notice response and assessment support
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="Income Tax & TDS">
+                            Talk about tax
+                            support
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!-- CARD 04 -->
+                <article class="stack-card light-card">
+                    <div class="card-image">
+                        <img src="images/4. Business Registration & MSME Support.jpeg" alt="Modern textile fashion">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ⌂
+                        </div>
+                        <h3>
+                            Business Registration & MSME
+                        </h3>
+                        <p>
+                            Starting a business the right way saves trouble later. We guide you from choosing the right
+                            structure to completing every registration.
+                        </p>
+                        <ul>
+                            <li>
+                                Proprietorship, partnership, LLP and company
+                            </li>
+                            <li>
+                                Udyam (MSME) registration assistance
+                            </li>
+                            <li>
+                                Shops & Establishment and other licences
+                            </li>
+                            <li>
+                                Guidance on selecting the suitable business structureGuidance on selecting the suitable
+                                business structure.
+                            </li>
+                            <li>
+                                Applicable MCA/ROC compliance support
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="Business Registration & MSME">
+                            Start
+                            your business
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!--CARD 05-->
+                <article class="stack-card light-card">
+                    <div class="card-image">
+                        <img src="images/5. Legal & Documentation Services.jpeg" alt="Modern textile fashion">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ⚖
+                        </div>
+                        <h3>
+                            Legal & Documentation
+                        </h3>
+                        <p>
+                            Proper documentation protects your business and avoids future disputes. We prepare and
+                            review
+                            the legal papers your business relies on.
+                        </p>
+                        <ul>
+                            <li>
+                                Document drafting and review coordination
+                            </li>
+                            <li>
+                                Declarations and affidavit assistance
+                            </li>
+                            <li>
+                                Statutory notice documentation support
+                            </li>
+                            <li>
+                                Trademark registration guidance
+                            </li>
+                            <li>
+                                Legal notices and replies
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="Legal & Documentation">
+                            Discuss
+                            documentation
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!--CARD 06-->
+                <article class="stack-card light-card">
+                    <div class="card-image">
+                        <img src="images/6. Agreements & Contracts.jpeg" alt="Modern textile fashion">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ▧
+                        </div>
+                        <h3>
+                            Agreements & Contracts
+                        </h3>
+                        <p>
+                            A well-drafted agreement clearly defines rights, duties, and expectations, so every deal
+                            starts on firm footing.
+                        </p>
+                        <ul>
+                            <li>
+                                Service, vendor and client agreements
+                            </li>
+                            <li>
+                                Employment, consultancy and NDA drafts
+                            </li>
+                            <li>
+                                Rental, lease and partnership documents
+                            </li>
+                            <li>
+                                Stamp duty and registration guidance
+                            </li>
+                            <li>
+                                Contract review and legal professional coordination
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="Agreements & Contracts">
+                            Prepare an
+                            agreement
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+                <!--CARD 07-->
+                <article class="stack-card light-card">
+                    <div class="card-image">
+                        <img src="images/7. HR & Labour Compliance Support.jpeg" alt="Modern textile fashion">
+                    </div>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            ◎
+                        </div>
+                        <h3>
+                            HR & Labour Compliance
+                        </h3>
+                        <p>
+                            Employee-related laws involve regular filings and strict timelines. We handle the paperwork
+                            so you can focus on your people.
+                        </p>
+                        <ul>
+                            <li>
+                                Payroll processing and salary records
+                            </li>
+                            <li>
+                                PF/ESI registration and filing assistance
+                            </li>
+                            <li>
+                                Appointment letters and HR policies
+                            </li>
+                            <li>
+                                Contract labour and Shops & Establishment compliance
+                            </li>
+                            <li>
+                                Applicable labour and workplace compliance
+                            </li>
+                        </ul>
+                        <a class="btn-gradient" href="#contact" data-service="HR & Labour Compliance">
+                            Get HR
+                            support
+                            <span>
+                                →
+                            </span>
+                        </a>
+                    </article>
+                </article>
+            </div>
+            </div>
+        </section>
+        <!---about section-->
+        <section id="about" class="about-section">
+            <div class="container">
+                <!-- ABOUT HEADER -->
+                <div class="about-grid">
+                    <!-- LEFT CONTENT -->
+                    <div class="about-content">
+                        <span class="kicker">
+                            ABOUT US
+                        </span>
+                        <h2>
+                            More time for business.
+                            <span>
+                                Less stress over paperwork.
+                            </span>
+                        </h2>
+                        <p class="about-description">
+                            Every business deserves dependable support and a clear
+                            understanding of its responsibilities. We make complex
+                            processes easier to navigate with transparent communication
+                            and solutions tailored to your requirements.
+                        </p>
+                        <!-- ABOUT POINTS -->
+                        <div class="about-points">
+                            <div class="about-point">
+                                <span class="check">
+                                    ✓
+                                </span>
+                                <div>
+                                    <strong>
+                                        Integrated Support
+                                    </strong>
+                                    <small>
+                                        Multiple business needs coordinated in one place.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="about-point">
+                                <span class="check">
+                                    ✓
+                                </span>
+                                <div>
+                                    <strong>
+                                        Clear Communication
+                                    </strong>
+                                    <small>
+                                        Understand requirements, timelines and next steps.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="about-point">
+                                <span class="check">
+                                    ✓
+                                </span>
+                                <div>
+                                    <strong>
+                                        Transparent Proposals
+                                    </strong>
+                                    <small>
+                                        Know the scope and fees before work begins.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="about-point">
+                                <span class="check">
+                                    ✓
+                                </span>
+                                <div>
+                                    <strong>
+                                        Confidential Approach
+                                    </strong>
+                                    <small>
+                                        Your documents are handled with care and discretion.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn-gradient">
+                            Let's Discuss Your Needs
+                            <span>
+                                ↗
+                            </span>
+                        </a>
+                    </div>
+                    <!-- RIGHT IMAGE -->
+                    <div class="about-visual">
+                        <div class="about-image-frame">
+                            <img src="images/ac788f8d-2935-4b4d-b434-ced6394efcab.jpeg"
+                                alt="Professional business advisory and accounting team" class="about-image"
+                                loading="lazy">
+                            <div class="image-label">
+                                <div>
+                                    <strong class="btn-gradient">
+                                        Trusted Business Support
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-decoration">
+                        </div>
+                        <div class="about-number">
+                            <span>
+                                01
+                            </span>
+                            <small>
+                                OUR APPROACH
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <!-- MISSION & VISION -->
+                <div class="purpose-grid">
+                    <!-- MISSION -->
+                    <article class="purpose-card vision-card">
+                        <div class="purpose-top">
+                            <span class="purpose-number">
+                                01
+                            </span>
+                            <span class="purpose-icon">
+                                ◎
+                            </span>
+                        </div>
+                        <span class="purpose-label">
+                            WHY WE EXIST
+                        </span>
+                        <h3>
+                            Our Mission
+                        </h3>
+                        <p>
+                            To make accounting, taxation, and compliance simple,
+                            accurate, and stress-free for every business and
+                            individual we serve through honest advice, timely
+                            action, and dependable support.
+                        </p>
+                        <div class="purpose-line">
+                        </div>
+                    </article>
+                    <!-- VISION -->
+                    <article class="purpose-card vision-card">
+                        <div class="purpose-top">
+                            <span class="purpose-number">
+                                02
+                            </span>
+                            <span class="purpose-icon">
+                                ↗
+                            </span>
+                        </div>
+                        <span class="purpose-label">
+                            WHERE WE ARE GOING
+                        </span>
+                        <h3>
+                            Our Vision
+                        </h3>
+                        <p>
+                            To be a trusted long-term compliance and advisory
+                            partner, known for integrity, reliability, and
+                            practical solutions that help our clients grow
+                            with confidence.
+                        </p>
+                        <div class="purpose-line">
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!---process-->
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">
+                        A straightforward process
+                    </div>
+                    <h2>
+                        From first conversation to ongoing support.
+                    </h2>
+                    <p>
+                        A clear process helps you understand what is needed, what comes next and how we will work
+                        together.
+                    </p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-num">
+                            01
+                        </div>
+                        <h3>
+                            Understand
+                        </h3>
+                        <p>
+                            We discuss your business, requirements, deadlines and current challenges.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">
+                            02
+                        </div>
+                        <h3>
+                            Plan
+                        </h3>
+                        <p>
+                            You receive a proposed scope, document checklist, timeline and fee estimate.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">
+                            03
+                        </div>
+                        <h3>
+                            Execute
+                        </h3>
+                        <p>
+                            After approval, we coordinate the documents and agreed service deliverables.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">
+                            04
+                        </div>
+                        <h3>
+                            Support
+                        </h3>
+                        <p>
+                            We communicate progress and discuss upcoming compliance requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---faq-->
+        <section id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">
+                        FAQs
+                    </div>
+                    <h2>
+                        Questions, answered clearly.
+                    </h2>
+                    <p>
+                        Here are answers to a few common questions. Contact us for guidance based on your specific
+                        situation.
+                    </p>
+                </div>
+                <div class="faq-grid">
+                    <details>
+                        <summary>
+                            Do I need GST registration for my business?
+                        </summary>
+                        <p>
+                            It depends on factors such as turnover, the type of supply, location and applicable GST
+                            rules. We can
+                            review your business details and help you understand the requirements.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Can you manage our accounts every month?
+                        </summary>
+                        <p>
+                            Monthly support may include bookkeeping, bank reconciliation, applicable GST/TDS filing
+                            coordination and
+                            management reports, based on the agreed scope.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Which business structure is right for a startup?
+                        </summary>
+                        <p>
+                            The right structure depends on ownership, liability, investment plans, compliance
+                            obligations
+                            and future
+                            goals. We can explain the common options so you can make an informed decision.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Can you help with GST or Income Tax notices?
+                        </summary>
+                        <p>
+                            We can help review the notice, identify information required and coordinate a response or
+                            refer the
+                            matter to an appropriately qualified professional where needed.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            How are service fees decided?
+                        </summary>
+                        <p>
+                            Fees depend on the type of service, transaction volume, complexity, deadlines and ongoing
+                            support
+                            required. We share the proposed scope and fee before starting work.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            How do I get started?
+                        </summary>
+                        <p>
+                            Send your details through the enquiry form or contact us by phone or WhatsApp. Please do not
+                            send
+                            passwords, OTPs or sensitive financial information through the public form.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <!---contact section-->
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <div class="kicker">
+                        Let’s get started
+                    </div>
+                    <h2>
+                        Tell us what your business needs.
+                    </h2>
+                    <p>
+                        Share a few details and we’ll help you identify the next steps for your accounting, tax,
+                        registration or compliance requirements.
+                    </p>
+                    <div class="contact-info">
+                        <a href="tel:+91XXXXX XXXXX">
+                            <span class="service-icon">
+                                ☎
+                            </span>
+                            <span>
+                                <strong>
+                                    Call us
+                                </strong>
+                                <br>
+                                +91
+                                xxxxxxxxxx
+                            </span>
+                        </a>
+                        <a href="mailto:XXX@gmail.com">
+                            <span class="service-icon">
+                                ✉
+                            </span>
+                            <span>
+                                <strong>
+                                    Email us
+                                </strong>
+                                <br>
+                                xxx@gmail.com
+                            </span>
+                        </a>
+                        <div>
+                            <span class="service-icon">
+                                ⌖
+                            </span>
+                            <span>
+                                <strong>
+                                    Location
+                                </strong>
+                                <br>
+                                Chennai, Tamil Nadu,
+                                India
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <h3>
+                        Request a consultation
+                    </h3>
+                    <p>
+                        Complete the form and continue to WhatsApp to send your enquiry.
+                    </p>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">
+                                Full name *
+                            </label>
+                            <input id="name" name="name" placeholder="Your name" required autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="phone">
+                                Phone number *
+                            </label>
+                            <input id="phone" name="phone" placeholder="+91 ..." required inputmode="tel"
+                                autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="email">
+                                Email address
+                            </label>
+                            <input id="email" name="email" type="email" placeholder="you@company.com"
+                                autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="service">
+                                Service required *
+                            </label>
+                            <select id="service" name="service" required>
+                                <option value="">
+                                    Choose a service
+                                </option>
+                                <option>
+                                    GST Services
+                                </option>
+                                <option>
+                                    TallyPrime & Accounting
+                                </option>
+                                <option>
+                                    Income Tax & TDS
+                                </option>
+                                <option>
+                                    Business Registration & MSME
+                                </option>
+                                <option>
+                                    Legal & Documentation
+                                </option>
+                                <option>
+                                    Agreements & Contracts
+                                </option>
+                                <option>
+                                    HR & Labour Compliance
+                                </option>
+                                <option>
+                                    Other enquiry
+                                </option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="message">
+                                How can we help?
+                            </label>
+                            <textarea id="message" name="message"
+                                placeholder="Briefly describe your requirements (please don't include sensitive data).">
+          </textarea>
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">
+                        Continue on WhatsApp ↗
+                    </button>
+                    <p class="form-note">
+                        Your form opens WhatsApp with a prepared message. Nothing is sent until you
+                        press Send in WhatsApp.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><a href="#home" class="brand" aria-label="Remarkable Home">
+                    <img src="images/jnkjjkj.jpeg" alt="Remarkable Logo">
+                </a>
+                <a class="brand" href="#home">
+                    <span class="brand-mark">
+                    </span>
+                    <span>
+                        <small>
+                            Accounts · Tax · Compliance
+                        </small>
+                    </span>
+                </a>
+                <p class="footer-about">
+                    Practical accounting, taxation, registration and compliance support to help
+                    businesses stay organised and move forward with confidence.
+                </p>
+            </div>
+            <div>
+                <h4>
+                    Our Services
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#services">
+                            GST Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            Accounting & TallyPrime
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            Income Tax & TDS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            Business Registration
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4>
+                    Business Support
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#services">
+                            Legal Documentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            Agreements & Contracts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            HR & Labour Compliance
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4>
+                    Contact
+                </h4>
+                <ul>
+                    <li>
+                        <a href="tel:+91 xxxxx xxxxx">
+                            +91 xxxxx xxxxx
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto: xxx@gmail.com">
+                            xxx@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        Chennai, Tamil Nadu
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            Request a consultation ↗
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>
+                ©
+                <span id="year">
+                </span>
+                Future Tax. All rights
+                reserved.
+            </span>
+            <span>
+                Professional support, tailored to your requirements.
+            </span>
+        </div>
+    </div>
+</footer>
+<a class="whatsapp" id="whatsappLink" href="https://wa.me/91xxxxx xxxxx" target="_blank" rel="noopener"
+    aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp">
+    <img src=" images/whatsapp.png">
+</a>
+<script src="script.js">
+</script>
+<script src="animation.js">
+</script>
+
+</html>
